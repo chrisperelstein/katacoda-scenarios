@@ -38,7 +38,11 @@
   },
   "environment": {
     "showdashboard": true,
-    "dashboards": [{"name": "Display 20001", "port": 20001}, {"name": "Display 8080", "port": 8080}],
+    "dashboards": [
+      {"name": "Display 20001", "port": 20001},
+      {"name": "Display 8080", "port": 8080},
+      {"name": "Placeholder", "href": "https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com"}
+    ],
     "uilayout": "terminal-iframe"
   },
   "backend": {
