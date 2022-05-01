@@ -421,7 +421,6 @@ spec:
   - name: http
     protocol: TCP
     port: 20001
-    nodePort: 20001
   - name: http-metrics
     protocol: TCP
     port: 9090
