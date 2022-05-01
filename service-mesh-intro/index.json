@@ -32,8 +32,8 @@
     },
     "assets": {
         "host01": [
-            {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-            {"file": "istio-1.13.3", "target": "/root"}
+            {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+            {"file": "kiali.yaml", "target": "/tmp/"},
         ]
     }
   },
