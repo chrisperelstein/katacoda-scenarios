@@ -49,6 +49,6 @@
     "uilayout": "terminal-iframe"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.21"
+    "imageid": "kubernetes-cluster-running:1.20"
   }
 }
