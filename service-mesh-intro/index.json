@@ -47,6 +47,6 @@
     "uilayout": "terminal-iframe"
   },
   "backend": {
-    "imageid": "minikube:1.18"
+    "imageid": "minikube:1.20"
   }
 }
