@@ -4,8 +4,8 @@ WORKDIR /app
 
 ADD . /app
 
-RUN go build -o /frontend
+RUN go build -o /roll-frontend
 
 EXPOSE 9301
 
-CMD [ "/frontend" ]
+CMD [ "/roll-frontend" ]

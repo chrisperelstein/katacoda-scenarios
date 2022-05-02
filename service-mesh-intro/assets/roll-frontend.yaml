@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: roll-frontend
+  name: roll-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: roll-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: roll-frontend
+    spec:
+      containers:
+      - image: roll-frontend:0.0.1
+        name: roll-frontend
+        resources: {}
+status: {}
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: roll-frontend
+  name: roll-frontend
+spec:
+  ports:
+  - name: 9301-9301
+    port: 9301
+    protocol: TCP
+    targetPort: 9301
+  selector:
+    app: roll-frontend
+  type: ClusterIP
+status:
+  loadBalancer: {}
+...

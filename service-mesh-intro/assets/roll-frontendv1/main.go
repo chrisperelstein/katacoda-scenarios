@@ -20,7 +20,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 		var result Result
-		resp, err := http.Get("http://backend:8080/roll")
+		resp, err := http.Get("http://roll-backend:8080/roll")
 		if err != nil {
 			log.Printf("Something went wrong during GET: %v", err)
 		}
