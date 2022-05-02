@@ -16,5 +16,6 @@ echo "done" >> /root/istio-installed
 kubectl label namespace default istio-injection=enabled
 kubectl apply -f samples/addons
 kubectl apply -f samples/addons
+kubectl apply -f roll-backend.yaml
 echo "done" >> /root/katacoda-background-finished
 istioctl dashboard kiali --browser=false

@@ -5,6 +5,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"time"
 )
 
 type Response struct {
@@ -19,6 +20,7 @@ func main() {
 		json.NewEncoder(w).Encode(Response{roll})
 	})
 
+	rand.Seed(time.Now().UnixNano())
 	log.Println("Listening on 9300")
 	http.ListenAndServe(":9300", nil)
 }
