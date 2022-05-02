@@ -33,9 +33,7 @@
     "assets": {
         "host01": [
             {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-            {"file": "kiali.yaml", "target": "/tmp/"},
-            {"file": "backend", "target": "/tmp/"},
-            {"file": "frontendv1", "target": "/tmp/"}
+            {"file": "kiali.yaml", "target": "/tmp/"}
         ]
     }
   },

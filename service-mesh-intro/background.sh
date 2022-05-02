@@ -1,9 +1,10 @@
 #!/bin/bash
 launch.sh
 sleep 1
-docker build --tag backend:0.0.1 /tmp/backend
-docker build --tag frontend:0.0.1 /tmp/frontendv1
-docker build --tag frontend:0.0.2 /tmp/frontendv2
+git clone https://github.com/DDEFISHER/katacoda-scenarios.git
+docker build --tag backend:0.0.1 /katacoda-scenarios/service-mesh-intro/assets/backend
+docker build --tag frontend:0.0.1 /katacoda-scenarios/service-mesh-intro/assets/frontendv1
+docker build --tag frontend:0.0.2 /katacoda-scenarios/service-mesh-intro/assets/frontendv2
 curl -L -k https://istio.io/downloadIstio | ISTIO_VERSION=1.13.3 TARGET_ARCH=x86_64 sh -
 mv /tmp/kiali.yaml istio-1.13.3/samples/addons
 cd istio-1.13.3
