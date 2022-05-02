@@ -35,6 +35,7 @@
             {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
             {"file": "roll-frontend.yaml", "target": "/root"},
             {"file": "roll-backend.yaml", "target": "/root"},
+            {"file": "roll-gateway.yaml", "target": "/root"},
             {"file": "kiali.yaml", "target": "/tmp/"}
         ]
     }
