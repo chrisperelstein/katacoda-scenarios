@@ -20,7 +20,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 		var result Result
-		resp, err := http.Get("http://roll-backend:8080/roll")
+		resp, err := http.Get("http://roll-backend:9300/roll")
 		if err != nil {
 			log.Printf("Something went wrong during GET: %v", err)
 		}
@@ -37,5 +37,5 @@ func main() {
 		tmpl.Execute(w, data)
 		log.Println("200 - OK")
 	})
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":9301", nil)
 }
