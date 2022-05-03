@@ -1,3 +1,4 @@
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -12,6 +13,7 @@ spec:
       protocol: HTTP
     hosts:
     - "*"
+...
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -30,3 +32,22 @@ spec:
     - destination:
         host: roll-frontend
         subset: v1
+...
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: roll-frontend
+spec:
+  host: roll-frontend
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+...
