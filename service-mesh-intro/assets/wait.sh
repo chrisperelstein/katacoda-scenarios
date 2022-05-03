@@ -2,7 +2,6 @@
 
 show_progress()
 {
-  echo -n "Starting kubernetes"
   local -r pid="${1}"
   local -r delay='0.75'
   local spinstr='\|/-'
@@ -14,14 +13,14 @@ show_progress()
       printf " Starting k8s [%c]  " "${spinstr}"
       spinstr=${temp}${spinstr%"${temp}"}
       sleep "${delay}"
-      printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+      printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
     else
       break
     fi
   done
   printf "    \b\b\b\b"
   echo ""
-  echo "Started kubernetes [x]" 
+  echo "Starting k8s [x]" 
   echo -n "Building example images"
   while true; do 
     sudo grep -i "done" /root/example-images-built &> /dev/null
