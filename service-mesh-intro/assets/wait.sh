@@ -11,7 +11,7 @@ show_progress()
     sudo grep -i "done" /root/k8s-started &> /dev/null
     if [[ "$?" -ne 0 ]]; then     
       temp="${spinstr#?}"
-      printf " [%c]  " "${spinstr}"
+      printf "Starting kubernetes [%c]  " "${spinstr}"
       spinstr=${temp}${spinstr%"${temp}"}
       sleep "${delay}"
       printf "\b\b\b\b\b\b"
@@ -21,7 +21,7 @@ show_progress()
   done
   printf "    \b\b\b\b"
   echo ""
-  echo "Started"
+  echo "Started kubernetes [x]" 
   echo -n "Building example images"
   while true; do 
     sudo grep -i "done" /root/example-images-built &> /dev/null
