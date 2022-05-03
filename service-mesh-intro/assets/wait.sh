@@ -10,33 +10,33 @@ show_progress()
     sudo grep -i "done" /root/k8s-started &> /dev/null
     if [[ "$?" -ne 0 ]]; then     
       temp="${spinstr#?}"
-      printf " Starting k8s [%c]  " "${spinstr}"
+      printf " Starting Kubernetes [%c]  " "${spinstr}"
       spinstr=${temp}${spinstr%"${temp}"}
       sleep "${delay}"
-      printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+      printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
     else
       break
     fi
   done
-  printf "    \b\b\b\b"
+  printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
   echo ""
-  echo "Starting k8s [x]" 
-  echo -n "Building example images"
+  echo " Starting Kubernetes [x]" 
   while true; do 
     sudo grep -i "done" /root/example-images-built &> /dev/null
     if [[ "$?" -ne 0 ]]; then     
       temp="${spinstr#?}"
-      printf " [%c]  " "${spinstr}"
+      printf " Building Images [%c]  " "${spinstr}"
       spinstr=${temp}${spinstr%"${temp}"}
       sleep "${delay}"
-      printf "\b\b\b\b\b\b"
+      printf " Building Images [%c]  "
+      printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
     else
       break
     fi
   done
-  printf "    \b\b\b\b"
+  printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
   echo ""
-  echo "Images built"
+  echo " Building Images [x]"
   echo -n "Installing Istio"
   while true; do 
     sudo grep -i "done" /root/istio-installed &> /dev/null
