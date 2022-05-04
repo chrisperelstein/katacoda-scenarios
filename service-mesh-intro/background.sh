@@ -1,6 +1,7 @@
 #!/bin/bash
 launch.sh
 sleep 1
+cd /root
 git clone https://github.com/DDEFISHER/katacoda-scenarios.git
 docker build --tag roll-backend:0.0.1 katacoda-scenarios/service-mesh-intro/assets/roll-backend
 docker build --tag roll-frontend:0.0.1 katacoda-scenarios/service-mesh-intro/assets/roll-frontendv1
