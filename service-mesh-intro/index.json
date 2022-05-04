@@ -36,6 +36,7 @@
             {"file": "roll-frontend.yaml", "target": "/root"},
             {"file": "roll-backend.yaml", "target": "/root"},
             {"file": "roll-gateway.yaml", "target": "/root"},
+            {"file": "roll-virtual-service-update.yaml", "target": "/root"},
             {"file": "kiali.yaml", "target": "/tmp/"}
         ]
     }
@@ -43,7 +44,7 @@
   "environment": {
     "showdashboard": true,
     "dashboards": [
-      {"name": "Frontend", "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"},
+      {"name": "Http", "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"},
       {"name": "Kiali", "href": "https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com"}
     ],
     "uilayout": "terminal-iframe"
