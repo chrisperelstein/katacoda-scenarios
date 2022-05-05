@@ -34,6 +34,7 @@
         "host01": [
             {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
             {"file": "roll-frontend.yaml", "target": "/root"},
+            {"file": "roll-frontend-v2.yaml", "target": "/root"},
             {"file": "roll-backend.yaml", "target": "/root"},
             {"file": "roll-gateway.yaml", "target": "/root"},
             {"file": "roll-virtual-service-update.yaml", "target": "/root"},
