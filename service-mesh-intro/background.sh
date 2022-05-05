@@ -16,4 +16,4 @@ kubectl apply -f samples/addons
 kubectl apply -f samples/addons
 kubectl apply -f /root/roll-gateway.yaml
 echo "done" >> /root/katacoda-background-finished
-#istioctl dashboard kiali --browser=false
+istioctl dashboard kiali --browser=false &

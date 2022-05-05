@@ -22,7 +22,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: roll-frontend:0.0.1
+      - image: us.gcr.io/daniel-349222/roll-frontend:0.0.1
         name: roll-frontend
         resources: {}
 status: {}

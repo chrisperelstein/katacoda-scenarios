@@ -19,7 +19,7 @@ spec:
         app: roll-backend
     spec:
       containers:
-      - image: roll-backend:0.0.1
+      - image: us.gcr.io/daniel-349222/roll-backend:0.0.1
         name: roll-backend
         resources: {}
 status: {}
