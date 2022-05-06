@@ -6,6 +6,9 @@ Deploy the backend service
 Deploy the frontend service
 `kubectl apply -f roll-frontend.yaml`{{execute}}
 
+# It looks something like this
+![Scan results](./assets/topo.png)
+
 # Open our ingress to outside world
 `kubectl port-forward -n istio-system --address 0.0.0.0 service/istio-ingressgateway 8080:80`
 

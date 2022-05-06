@@ -1,7 +1,9 @@
-# Welcome please wait for the environment to get started.
+## Welcome
+
+Please wait for the environment to get started.
 
 ## Check Status
 
-Verify we are up and running.
+Verify kubernetes is healthy.
 
 `kubectl cluster-info`{{execute}}
