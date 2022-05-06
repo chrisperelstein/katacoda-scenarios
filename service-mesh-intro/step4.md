@@ -1,7 +1,6 @@
-# Check out some other features
+# Kaili
 
-## Open our ingress to outside world again
-`kubectl port-forward -n istio-system --address 0.0.0.0 service/kiali 20001:20001`{{execute}}
+Let's look at the kaili tool.
 
-## View application
+## View the dashboard
 [click here]({{TRAFFIC_HOST1_20001}})
