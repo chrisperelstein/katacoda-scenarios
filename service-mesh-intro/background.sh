@@ -13,4 +13,3 @@ kubectl apply -f samples/addons
 kubectl apply -f /root/roll-gateway.yaml
 echo "done" >> /root/katacoda-background-finished
 istioctl dashboard kiali --browser=false &
-kubectl port-forward -n istio-system --address 0.0.0.0 service/istio-ingressgateway 8080:80 &
