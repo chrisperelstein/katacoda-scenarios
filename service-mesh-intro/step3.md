@@ -8,9 +8,14 @@ Deploy the new version
 
 `kubectl apply -f roll-frontend-v2.yaml`{{execute}}
 
-Add a canary rule to route 20% of traffic to new version but keep 80% of old traffic.
+## Add a canary rule
+
+Let's add a rule to route 20% of traffic to new version but keep 80% of old traffic.
 
 `kubectl apply -f roll-virtual-service-update.yaml`{{execute}}
+
+To see what the changes actually are lets use diff
+`diff roll-virtual-service-update.yaml roll-virtual-service.yaml`{{execute}}
 
 # Verify all new instances are deployed
 
