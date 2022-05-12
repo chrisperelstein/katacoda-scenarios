@@ -29,4 +29,4 @@ To see what the changes actually are lets use diff
 # View application
 [click here]({{TRAFFIC_HOST1_8080}})
 
-Note: There are many options for canary deployments. Usernames, ips etc.
+Note: There are many options for canary deployments. Usernames, matching on certain headers etc.
