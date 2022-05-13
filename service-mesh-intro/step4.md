@@ -1,8 +1,8 @@
 # Kaili
 
-Let's look at the kaili tool.
+Let's look at the kaili tool. It's a management console for the service mesh.
 
-## Open proxy
+## Port-forward for kaili
 
 `kubectl port-forward -n istio-system --address 0.0.0.0 service/kiali 20001:20001`{{execute}}
 
