@@ -1,11 +1,15 @@
-FROM golang:1.16
+FROM golang:1.17 as build-env
 
-WORKDIR /app
+WORKDIR /go/src/app
+COPY *.go .
 
-ADD . /app
+RUN go mod init
+RUN go get -d -v ./...
 
-RUN go build -o /roll-frontend
+RUN CGO_ENABLED=0 go build -o /go/bin/app
 
+FROM gcr.io/distroless/static-debian11
+
+COPY --from=build-env /go/bin/app /
 EXPOSE 9301
-
-CMD [ "/roll-frontend" ]
+CMD [ "/app" ]

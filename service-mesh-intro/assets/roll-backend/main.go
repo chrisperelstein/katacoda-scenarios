@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"net/http"
 	"time"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 type Response struct {
@@ -13,6 +14,7 @@ type Response struct {
 }
 
 func main() {
+	http.Handle("/metrics", promhttp.Handler())
 	http.HandleFunc("/roll", func(w http.ResponseWriter, r *http.Request) {
 		roll := rand.Intn(20) + 1
 		log.Println("OK - 200")
