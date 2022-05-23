@@ -6,11 +6,23 @@ import (
 	"math/rand"
 	"net/http"
 	"time"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 type Response struct {
 	Roll int
+}
+
+var (
+	lastRoll = prometheus.NewGauge(prometheus.GaugeOpts{
+		Name: "last_roll",
+		Help: "Value of last roll.",
+	})
+)
+
+func init() {
+	prometheus.MustRegister(lastRoll)
 }
 
 func main() {
@@ -20,6 +32,7 @@ func main() {
 		log.Println("OK - 200")
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(Response{roll})
+		lastRoll.Set(float64(roll))
 	})
 
 	rand.Seed(time.Now().UnixNano())
