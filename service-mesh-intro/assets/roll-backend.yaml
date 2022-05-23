@@ -23,7 +23,7 @@ spec:
         app: roll-backend
     spec:
       containers:
-      - image: us.gcr.io/daniel-349222/roll-backend:0.0.1
+      - image: registry.hub.docker.com/chrisperelstein/roll-demo:0.0.1
         name: roll-backend
         resources: {}
 status: {}
